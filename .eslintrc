@@ -1,0 +1,37 @@
+{
+  "env": {"jest": true},
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    // Soften some rules
+    "arrow-parens": 0, // Does not work with generic types
+    "arrow-body-style": 0, // Does not work as expected
+    "global-require": 0, // Used by React Native
+    "import/extensions": 0, // Allow for .JSX file imports
+    "import/first": 0, // Sorts by natural order
+    "import/no-named-as-default": 0, // TODO: Remove this rule after refactoring
+    "import/prefer-default-export": 0, // No. Actions can have just one action
+    "jsx-a11y/href-no-hash": 0, // TODO: Remove this rule after refactoring
+    "no-confusing-arrow": 0, // This rule is confusing
+    "no-nested-ternary": 0, // Nice for JSX
+    "no-param-reassign": 0, // We love param reassignment. Naming is hard
+    "no-plusplus": 0, // Uhhh, no, this is fine
+    "no-shadow": 0, // Shadowing is a nice language feature. Naming is hard
+    "no-underscore-dangle": 0, // Do not force variable naming (MongoDB)
+    "max-len": [2, {
+      "code": 160,
+      "ignorePattern": "^import\\s.+\\sfrom\\s.+;$",
+      "ignoreUrls": true,
+      "ignoreComments": true
+    }], // Helps with built-in editor configs
+    "prefer-template": 0, // Sounds nice, not sure it should be an error though
+    // React
+    "react/forbid-prop-types": 0, // Make things easier
+    "react/jsx-filename-extension": 0, // No, JSX belongs to .js files
+    "react/no-array-index-key": 0, // TODO: Remove this rule after refactoring
+    "react/jsx-no-bind": 0, // TODO: Remove this rule after refactoring
+    "react/jsx-no-comment-textnodes": 0, // Neccessary for dynamic generator content
+    "react/no-string-refs": 0, // TODO: Remove this rule after refactoring
+    "react/require-default-props": 0, // ES6 has default props built in
+  }
+}
